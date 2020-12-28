@@ -1,0 +1,9 @@
+[book]
+authors = ["dCordon"]
+language = "es"
+multilingual = false
+src = "src"
+title = "Guía de instalación de Arch Linux"
+
+[build]
+create-missing = false
