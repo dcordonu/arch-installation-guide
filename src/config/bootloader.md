@@ -30,7 +30,7 @@ En este punto es necesario montar la partición `/dev/sda1`, que en la tabla de 
 
 ```bash
 mkdir /boot/EFI
-mount /dev/sda1 /mnt/boot
+mount /dev/sda1 /boot/EFI
 ```
 
 Finalmente, instalamos el gestor de arranque con el comando `grub-install`:
@@ -48,7 +48,7 @@ cp /boot/grub/locale/en\@quot.mo /boot/grub/en.mo
 Por último, se genera el menú:
 
 ```bash
-grub-install -o /boot/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 El resultado de este comando indicará que ha "encontrado" tres imágenes por cada kernel que se haya instalado: *linux*, *initrd* y *fallback initrd*.

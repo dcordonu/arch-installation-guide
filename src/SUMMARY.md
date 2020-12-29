@@ -15,4 +15,6 @@
   - [Usuarios y contraseñas](./config/users.md)
   - [Gestor de arranque](./config/bootloader.md)
   - [Microcodes](./config/microcode.md)
+  - [Probar el sistema](./config/test.md)
 - [Entorno de escritorio](./desktop/README.md)
+  - [Paquetes necesarios](./desktop/packages.md)
