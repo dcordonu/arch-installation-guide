@@ -12,5 +12,7 @@
   - [Idioma](./config/language.md)
   - [Red](./config/network.md)
   - [Disco RAM inicial](./config/ramdisk.md)
-  - [Contraseña de root](./config/root.md)
+  - [Usuarios y contraseñas](./config/users.md)
   - [Gestor de arranque](./config/bootloader.md)
+  - [Microcodes](./config/microcode.md)
+- [Entorno de escritorio](./desktop/README.md)

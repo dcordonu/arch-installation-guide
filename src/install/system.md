@@ -18,7 +18,7 @@ La instalación de Arch Linux, firmwares necesarios y el kernel de Linux se real
 * `linux-zen`: última versión estable con parámetros de configuración reajustados para lograr un mayor rendimiento del kernel a cambio de un mayor consumo de potencia.
 
 ```bash
-pacstrap /mnt base linux-zen linux-firmware nano
+pacstrap /mnt base linux-zen linux-firmware sudo nano
 ```
 
 >El proceso de instalación es idéntico sin importar qué tipo de kernel se instale, con la salvedad del paquete [`virtualbox`](https://wiki.archlinux.org/index.php/VirtualBox#Installation_steps_for_Arch_Linux_hosts).

@@ -10,6 +10,8 @@ fdisk -l | grep dev
 
 En este caso solo se dispone de un disco duro al que se le ha asignado el identificador **sda**:
 
+![Salida mostrada por el comando fdisk](../images/fdisk-grep-dev.png)
+
 ```bash
 Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
 Disk /dev/loop0: 549.16 MiB, 575836160 bytes, 1124680 sectors
