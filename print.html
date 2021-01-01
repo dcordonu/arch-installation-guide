@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="prerequisites/index.html"><strong aria-hidden="true">2.</strong> Prerrequisitos</a></li><li class="chapter-item expanded "><a href="install/index.html"><strong aria-hidden="true">3.</strong> Instalación</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="install/usb.html"><strong aria-hidden="true">3.1.</strong> Preparación y arranque del USB</a></li><li class="chapter-item expanded "><a href="install/disco.html"><strong aria-hidden="true">3.2.</strong> Particionar disco</a></li><li class="chapter-item expanded "><a href="install/particionado.html"><strong aria-hidden="true">3.3.</strong> Formatear y encriptar particiones</a></li><li class="chapter-item expanded "><a href="install/system.html"><strong aria-hidden="true">3.4.</strong> Instalar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">4.</strong> Configurar el sistema</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/timezone.html"><strong aria-hidden="true">4.1.</strong> Zona horaria</a></li><li class="chapter-item expanded "><a href="config/language.html"><strong aria-hidden="true">4.2.</strong> Idioma</a></li><li class="chapter-item expanded "><a href="config/network.html"><strong aria-hidden="true">4.3.</strong> Red</a></li><li class="chapter-item expanded "><a href="config/ramdisk.html"><strong aria-hidden="true">4.4.</strong> Disco RAM inicial</a></li><li class="chapter-item expanded "><a href="config/users.html"><strong aria-hidden="true">4.5.</strong> Usuarios y contraseñas</a></li><li class="chapter-item expanded "><a href="config/bootloader.html"><strong aria-hidden="true">4.6.</strong> Gestor de arranque</a></li><li class="chapter-item expanded "><a href="config/microcode.html"><strong aria-hidden="true">4.7.</strong> Microcodes</a></li><li class="chapter-item expanded "><a href="config/test.html"><strong aria-hidden="true">4.8.</strong> Probar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="desktop/index.html"><strong aria-hidden="true">5.</strong> Entorno de escritorio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="desktop/packages.html"><strong aria-hidden="true">5.1.</strong> Paquetes necesarios</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="prerequisites/index.html"><strong aria-hidden="true">2.</strong> Prerrequisitos</a></li><li class="chapter-item expanded "><a href="install/index.html"><strong aria-hidden="true">3.</strong> Instalación</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="install/usb.html"><strong aria-hidden="true">3.1.</strong> Preparación y arranque del USB</a></li><li class="chapter-item expanded "><a href="install/disco.html"><strong aria-hidden="true">3.2.</strong> Particionar disco</a></li><li class="chapter-item expanded "><a href="install/particionado.html"><strong aria-hidden="true">3.3.</strong> Formatear y encriptar particiones</a></li><li class="chapter-item expanded "><a href="install/system.html"><strong aria-hidden="true">3.4.</strong> Instalar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">4.</strong> Configurar el sistema</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/timezone.html"><strong aria-hidden="true">4.1.</strong> Zona horaria</a></li><li class="chapter-item expanded "><a href="config/language.html"><strong aria-hidden="true">4.2.</strong> Idioma</a></li><li class="chapter-item expanded "><a href="config/network.html"><strong aria-hidden="true">4.3.</strong> Red</a></li><li class="chapter-item expanded "><a href="config/ramdisk.html"><strong aria-hidden="true">4.4.</strong> Disco RAM inicial</a></li><li class="chapter-item expanded "><a href="config/users.html"><strong aria-hidden="true">4.5.</strong> Usuarios y contraseñas</a></li><li class="chapter-item expanded "><a href="config/bootloader.html"><strong aria-hidden="true">4.6.</strong> Gestor de arranque</a></li><li class="chapter-item expanded "><a href="config/microcode.html"><strong aria-hidden="true">4.7.</strong> Microcodes</a></li><li class="chapter-item expanded "><a href="config/test.html"><strong aria-hidden="true">4.8.</strong> Probar el sistema</a></li><li class="chapter-item expanded "><a href="install/yay.html"><strong aria-hidden="true">4.9.</strong> Instalar YAY</a></li></ol></li><li class="chapter-item expanded "><a href="desktop/index.html"><strong aria-hidden="true">5.</strong> Entorno gráfico</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="desktop/kde.html"><strong aria-hidden="true">5.1.</strong> Entorno de escritorio</a></li><li class="chapter-item expanded "><a href="desktop/sddm.html"><strong aria-hidden="true">5.2.</strong> Gestor de inicio</a></li><li class="chapter-item expanded "><a href="desktop/packages.html"><strong aria-hidden="true">5.3.</strong> Paquetes</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -189,9 +189,6 @@
 </code></pre>
 <p>En este caso solo se dispone de un disco duro al que se le ha asignado el identificador <strong>sda</strong>:</p>
 <p><img src="install/../images/fdisk-grep-dev.png" alt="Salida mostrada por el comando fdisk" /></p>
-<pre><code class="language-bash">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
-Disk /dev/loop0: 549.16 MiB, 575836160 bytes, 1124680 sectors
-</code></pre>
 <blockquote>
 <p>Es importante realizar los cambios sobre el disco correcto en el que se quiere hacer la instalación porque el proceso de particionado elimina todo el contenido previo que hubiera en él.</p>
 </blockquote>
@@ -279,9 +276,12 @@ vgcreate vg0 /dev/mapper/Sistema
 </code></pre>
 <p><img src="install/../images/pvcreate.png" alt="Creación volúmen físico y volume group" /></p>
 <p>Por último, hay que crear los volúmenes lógicos a partir del <em>volume group</em>:</p>
-<pre><code class="language-bash">lvcreate -L 2G vg0 -n home
-lvcreate -l 100%FREE vg0 -n system
+<pre><code class="language-bash">lvcreate -L 20G vg0 -n system
+lvcreate -l 100%FREE vg0 -n home
 </code></pre>
+<blockquote>
+<p>Hemos usado 20 GiB para la partición del sistema, lo recomendado, porque asumimos una capacidad de 100 GiB y el resto será para los datos de los usuarios.</p>
+</blockquote>
 <p>Los volúmenes creados como <em>home</em> y <em>system</em> tendrán montadas las rutas <code>/home</code> y <code>/</code>. Solo queda formatearlos como Ext 4:</p>
 <pre><code class="language-bash">mkfs.ext4 /dev/vg0/home
 mkfs.ext4 /dev/vg0/system
@@ -350,11 +350,14 @@ mount /dev/sda2 /mnt/boot
 <pre><code class="language-bash">HOOKS = (base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
 </code></pre>
 <p>Sin embargo, para que el <em>hook</em> de LVM pueda funcionar y el sistema sea capaz de leer las particiones al inicio, hay que instalar el paquete <code>lvm2</code> puesto que no viene incluido en el sistema base:</p>
-<pre><code class="language-bash">pacman -Sy lvm2 --noconfirm
+<pre><code class="language-bash">pacman -S lvm2 --noconfirm
 </code></pre>
-<p>Este comando incluye una imagen del kernel que se quiere que cargue al inicio y ha de coincidir con el que se ha instalado usando <code>pacstrap</code>, en este caso:</p>
+<p>Tras instalar ese paquete se generarán las imágenes requeridas para arrancar el sistema de manera automática, no obstante puede ejecutarse manualmente mediante:</p>
 <pre><code class="language-bash">mkinitcpio -p linux-zen
 </code></pre>
+<blockquote>
+<p>Este comando incluye una imagen del kernel que se quiere que cargue al inicio y ha de coincidir con el que se ha instalado usando <code>pacstrap</code>. Si se han instalado varios kernels, es necesario lanzarlo una vez por cada uno.</p>
+</blockquote>
 <h1><a class="header" href="#usuarios-y-contraseñas" id="usuarios-y-contraseñas">Usuarios y contraseñas</a></h1>
 <h2><a class="header" href="#inicializar-contraseña-de-root" id="inicializar-contraseña-de-root">Inicializar contraseña de root</a></h2>
 <p>Antes de iniciar el sistema por primera vez tras instalar los paquetes, es recomendable configurar la contraseña del usuario <code>root</code> con el comando <code>passwd</code>.</p>
@@ -373,10 +376,10 @@ mount /dev/sda2 /mnt/boot
 <pre><code class="language-bash">EDITOR=nano visudo
 </code></pre>
 <p>Para que no se pida contraseña a los usuarios, hay que descomentar (eliminar el carácter <code>#</code>) la línea</p>
-<pre><code class="language-bash"># %wheel ALL=(ALL) ALL
+<pre><code class="language-bash"># %wheel ALL=(ALL) NOPASSWD: ALL
 </code></pre>
 <p>Para que se les pida contraseña, la línea a descomentar es</p>
-<pre><code class="language-bash"># %wheel ALL=(ALL) NOPASSWD: ALL
+<pre><code class="language-bash"># %wheel ALL=(ALL) ALL
 </code></pre>
 <p>Para guardar los cambios en el editor, hay que pulsar <code>Ctrl + O</code> y para salir, <code>Ctrl + X</code>. En caso de haber cometido algún error que haya dejado el fichero en un estado inestable, se muestra un aviso dando la opción de volver a abrir el editor o de descartar los cambios.</p>
 <p><img src="config/../images/visudo-error.png" alt="Error validando archivo /etc/sudoers" /></p>
@@ -400,9 +403,6 @@ mount /dev/sda1 /boot/EFI
 </code></pre>
 <p>Finalmente, instalamos el gestor de arranque con el comando <code>grub-install</code>:</p>
 <pre><code class="language-bash">grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
-</code></pre>
-<p>Antes de generar el menú que GRUB mostrará al iniciar el sistema, es necesario copiar un archivo para que lo muestre correctamente en inglés:</p>
-<pre><code class="language-bash">cp /boot/grub/locale/en\@quot.mo /boot/grub/en.mo
 </code></pre>
 <p>Por último, se genera el menú:</p>
 <pre><code class="language-bash">grub-mkconfig -o /boot/grub/grub.cfg
@@ -431,15 +431,93 @@ mount /dev/sda1 /boot/EFI
 <p><img src="config/../images/arch-boot-decrypt.png" alt="Introducir clave de cifrado" /></p>
 <p>Por último, hay que iniciar sesión con el usuario creado previamente, <em>diego</em> en este caso.</p>
 <p><img src="config/../images/arch-login.png" alt="Login" /></p>
-<h1><a class="header" href="#entorno-de-escritorio" id="entorno-de-escritorio">Entorno de escritorio</a></h1>
+<h1><a class="header" href="#yay" id="yay">YAY</a></h1>
+<p>En Arch Linux existe un repositorio desde el que se pueden obtener paquetes que son mantenidos por la comunidad de usuarios, conocido como AUR - <a href="https://aur.archlinux.org/">Arch User Repository</a>. A diferencia de los paquetes oficiales, estos requieren que el usuario descargue un <code>PKGBUILD</code> que ejecutará los pasos necesarios para generar el instalable que sí que se instala en el sistema con el comando <code>pacman</code>. Estos pasos incluyen, entre otros:</p>
+<ul>
+<li>Descarga de código fuente o binarios.</li>
+<li>Comprobación MD5 de los recursos descargados.</li>
+<li>Instalar dependencias necesarias.</li>
+<li>Compilar el código fuente descargado.</li>
+<li>Generar el instalable.</li>
+</ul>
+<p>Una desventaja de este tipo de paquetes es que cuando se actualiza el sistema, no son tenidos en cuenta. Sin embargo, existe una herramienta llamada <a href="https://aur.archlinux.org/packages/yay"><code>yay</code></a> que permite automatizar su instalación y actualización, junto a los paquetes oficiales. Es decir, no es necesario usar <code>pacman</code> si se tiene instalado <code>yay</code>.</p>
+<h2><a class="header" href="#instalar-yay" id="instalar-yay">Instalar <code>yay</code></a></h2>
+<blockquote>
+<p>Algunos de los comandos a emplear no permiten ser ejecutados como <code>root</code>, por lo que antes hay que iniciar sesión con otro usuario.</p>
+</blockquote>
+<p>Instalar paquetes desde el AUR requiere descargar ciertos paquetes previamente:</p>
+<pre><code class="language-bash">sudo pacman -S fakeroot --noconfirm
+</code></pre>
+<blockquote>
+<p>En este caso es necesario lanzar el comando mediante <code>sudo</code> al no estar trabajando como usuario <code>root</code>.</p>
+</blockquote>
+<p>Inicialmente hay que crear una carpeta, descargar el <code>PKGBUILD</code> de <code>yay</code> y extraer el contenido:</p>
+<pre><code class="language-bash">mkdir yay
+cd yay
+curl https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz --output yay.tar.gz
+tar -xf yay.tar.gz --strip-components=1
+</code></pre>
+<p>El comando <code>makepkg</code> se encarga de generar el binario instalable:</p>
+<pre><code class="language-bash">makepkg -s
+</code></pre>
+<p>Tras finalizar, se habrá creado un fichero instalable mediante <code>pacman</code> en la ruta donde se ha ejecutado el comando anterior, de extensión <code>pkg.tar.zst</code>.</p>
+<p><img src="install/../images/makepkg.png" alt="Ficheros generados por el comando makepkg" /></p>
+<p>La estructura es idéntica a la de los paquetes oficiales, pero hay que tener en cuenta que al ser mantenidos por usuarios que no forman parte del equipo oficial de Arch Linux, es posible que en algún momento alguno de estos paquetes deje de ser actualizado hasta que otro usuario asuma su mantenimiento. Mientras eso ocurre, en la página del AUR correspondiente a ese paquete aparecerá como <em>out of date</em>.</p>
+<p><img src="install/../images/out-of-date.png" alt="Paquete del AUR marcado como 'out of date'" /></p>
+<blockquote>
+<p>Aunque un paquete marcado como <em>out of date</em> puede aún ser instalado y funcionar, es recomendable buscar alternativas para garantizar la estabilidad del sistema.</p>
+</blockquote>
+<p>Para instalar <code>yay</code>, se emplea <code>pacman</code> con el flag U:</p>
+<pre><code class="language-bash">sudo pacman -U yay-10.1.2-1-x86_64.pkg.tar.zst --noconfirm
+</code></pre>
+<p><img src="install/../images/yay-install.png" alt="Instalación del paquete yay" /></p>
+<p>Finalmente, se puede borrar la carpeta temporal que se ha empleado:</p>
+<pre><code class="language-bash">cd ..
+rm -rf yay
+</code></pre>
+<h2><a class="header" href="#gestionar-paquetes-con-yay" id="gestionar-paquetes-con-yay">Gestionar paquetes con yay</a></h2>
+<p>Para instalar un paquete con <code>yay</code>, basta con localizarlo en la web del AUR y ejecutar el comando como si se tratara de <code>pacman</code>. Por ejemplo, para el paquete de Skype:</p>
+<pre><code class="language-bash">yay -S skypeforlinux-stable-bin
+</code></pre>
+<p>Para desinstalar un paquete se sigue empleado <code>pacman</code>:</p>
+<pre><code class="language-bash">sudo pacman -Rns skypeforlinux-stable-bin
+</code></pre>
+<blockquote>
+<p>Los flags <code>n</code> y <code>s</code> le indican a <code>pacman</code> que borre los paquetes que haya habido que instalar como dependencias del que se está borrando, en caso de que no sean requeridos por ningún otro paquete que haya instalado. Son de uso opcional, pero permiten mantener el sistema más limpio.</p>
+</blockquote>
+<h2><a class="header" href="#actualización-completa-del-sistema-con-yay" id="actualización-completa-del-sistema-con-yay">Actualización completa del sistema con yay</a></h2>
+<p>Dado que <code>yay</code> reemplaza y amplia el alcance de <code>pacman</code>, es posible usarlo para lanzar una actualización completa del sistema, incluyendo tanto paquetes oficiales como del AUR, de manera desatentida:</p>
+<pre><code class="language-bash">yay --noremovemake --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noupgrademenu -Syu
+</code></pre>
+<p><img src="install/../images/yay-upgrade.png" alt="Actualización completa y desatendida del sistema usando yay" /></p>
+<h1><a class="header" href="#entorno-gráfico" id="entorno-gráfico">Entorno gráfico</a></h1>
 <p>La instalación y configuración del sistema hasta ahora da como resultado un sistema Arch Linux estable y listo para trabajar, rápido y liviano. Sin embargo, es muy frecuente necesitar un entorno gráfico para utilizar la mayoría de programas disponibles, como IDEs de desarrollo o navegadores web. En ese caso es necesario instalar paquetes adicionales, como un <strong>sistema X Window</strong>, un <strong>gestor de ventanas</strong>, un <strong>gestor de inicio de sesión</strong> o un <strong>entorno de escritorio</strong>.</p>
 <p>Existen multitud de alternativas para todos ellos y la mayoría se pueden combinar entre sí hasta lograr una configuración acorde a lo deseado y a los recursos de los que se dispone. Para ser lo más generalista posible, este capítulo va a explicar cómo instalar el entorno de escritorio KDE.</p>
 <blockquote>
 <p>Para evitar usar <code>sudo</code> con cada comando, es recomendable iniciar sesión con el usuario <code>root</code>.</p>
 </blockquote>
-<h1><a class="header" href="#paquetes-necesarios" id="paquetes-necesarios">Paquetes necesarios</a></h1>
-<pre><code class="language-bash">pacman -S mesa plasma plasma-wayland-session xorg-server-xwayland --noconfirm
+<h1><a class="header" href="#entorno-de-escritorio" id="entorno-de-escritorio">Entorno de escritorio</a></h1>
+<p>Una instalación mínima de KDE se consigue con el paquete <code>plasma-desktop</code>, aunque es necesario instalar más paquetes adicionales para el correcto renderizado en pantalla.</p>
+<pre><code class="language-bash">pacman -S mesa plasma-desktop plasma-wayland-session xorg-server-xwayland konsole yay --noconfirm
 </code></pre>
+<h1><a class="header" href="#gestor-de-inicio" id="gestor-de-inicio">Gestor de inicio</a></h1>
+<p>El paquete <code>sddm</code> es el gestor de inicio recomendado si se trabaja con KDE.</p>
+<pre><code class="language-bash">pacman -S sddm sddm-kcm kwallet-pam --noconfirm
+</code></pre>
+<p>SDDM necesita activar un servicio de <code>systemd</code> para iniciar automáticamente al arranque:</p>
+<pre><code class="language-bash">systemctl enable sddm
+</code></pre>
+<p>Es necesario reiniciar para aplicar todos los cambios:</p>
+<pre><code class="language-bash">reboot
+</code></pre>
+<p>SDDM se cargará y mostrará una ventana gráfica para introducir un usuario y una contraseña.</p>
+<p><img src="desktop/../images/sddm.png" alt="Pantalla de inicio de SDDM" /></p>
+<h1><a class="header" href="#paquetes" id="paquetes">Paquetes</a></h1>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/kscreen">kscreen</a></td><td>Aplicación oficial de KDE para configurar monitores</td></tr>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/firefox">firefox</a></td><td>Navegador Firefox</td></tr>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/okular">okular</a></td><td>Visor de PDFs</td></tr>
+</tbody></table>
 
                     </main>
 
