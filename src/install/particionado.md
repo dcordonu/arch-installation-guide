@@ -62,9 +62,11 @@ vgcreate vg0 /dev/mapper/Sistema
 Por último, hay que crear los volúmenes lógicos a partir del *volume group*:
 
 ```bash
-lvcreate -L 2G vg0 -n home
-lvcreate -l 100%FREE vg0 -n system
+lvcreate -L 20G vg0 -n system
+lvcreate -l 100%FREE vg0 -n home
 ```
+
+>Hemos usado 20 GiB para la partición del sistema, lo recomendado, porque asumimos una capacidad de 100 GiB y el resto será para los datos de los usuarios.
 
 Los volúmenes creados como *home* y *system* tendrán montadas las rutas `/home` y `/`. Solo queda formatearlos como Ext 4:
 

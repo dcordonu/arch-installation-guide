@@ -39,12 +39,6 @@ Finalmente, instalamos el gestor de arranque con el comando `grub-install`:
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 ```
 
-Antes de generar el menú que GRUB mostrará al iniciar el sistema, es necesario copiar un archivo para que lo muestre correctamente en inglés:
-
-```bash
-cp /boot/grub/locale/en\@quot.mo /boot/grub/en.mo
-```
-
 Por último, se genera el menú:
 
 ```bash

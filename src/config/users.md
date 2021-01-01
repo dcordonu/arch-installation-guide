@@ -31,13 +31,13 @@ EDITOR=nano visudo
 Para que no se pida contraseña a los usuarios, hay que descomentar (eliminar el carácter `#`) la línea
 
 ```bash
-# %wheel ALL=(ALL) ALL
+# %wheel ALL=(ALL) NOPASSWD: ALL
 ```
 
 Para que se les pida contraseña, la línea a descomentar es
 
 ```bash
-# %wheel ALL=(ALL) NOPASSWD: ALL
+# %wheel ALL=(ALL) ALL
 ```
 
 Para guardar los cambios en el editor, hay que pulsar `Ctrl + O` y para salir, `Ctrl + X`. En caso de haber cometido algún error que haya dejado el fichero en un estado inestable, se muestra un aviso dando la opción de volver a abrir el editor o de descartar los cambios.

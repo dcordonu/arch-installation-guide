@@ -17,11 +17,13 @@ HOOKS = (base udev autodetect modconf block encrypt lvm2 filesystems keyboard fs
 Sin embargo, para que el *hook* de LVM pueda funcionar y el sistema sea capaz de leer las particiones al inicio, hay que instalar el paquete `lvm2` puesto que no viene incluido en el sistema base:
 
 ```bash
-pacman -Sy lvm2 --noconfirm
+pacman -S lvm2 --noconfirm
 ```
 
-Este comando incluye una imagen del kernel que se quiere que cargue al inicio y ha de coincidir con el que se ha instalado usando `pacstrap`, en este caso:
+Tras instalar ese paquete se generarán las imágenes requeridas para arrancar el sistema de manera automática, no obstante puede ejecutarse manualmente mediante:
 
 ```bash
 mkinitcpio -p linux-zen
 ```
+
+>Este comando incluye una imagen del kernel que se quiere que cargue al inicio y ha de coincidir con el que se ha instalado usando `pacstrap`. Si se han instalado varios kernels, es necesario lanzarlo una vez por cada uno.

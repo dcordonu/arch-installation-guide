@@ -12,11 +12,6 @@ En este caso solo se dispone de un disco duro al que se le ha asignado el identi
 
 ![Salida mostrada por el comando fdisk](../images/fdisk-grep-dev.png)
 
-```bash
-Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
-Disk /dev/loop0: 549.16 MiB, 575836160 bytes, 1124680 sectors
-```
-
 >Es importante realizar los cambios sobre el disco correcto en el que se quiere hacer la instalación porque el proceso de particionado elimina todo el contenido previo que hubiera en él.
 
 El comando `fdisk` también permite gestionar particiones si se le pasa como parámetro un identificador de disco válido:
