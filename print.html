@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<html lang="es" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Guía de instalación de Arch Linux</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="prerequisites/index.html"><strong aria-hidden="true">2.</strong> Prerrequisitos</a></li><li class="chapter-item expanded "><a href="install/index.html"><strong aria-hidden="true">3.</strong> Instalación</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="install/usb.html"><strong aria-hidden="true">3.1.</strong> Preparación y arranque del USB</a></li><li class="chapter-item expanded "><a href="install/disco.html"><strong aria-hidden="true">3.2.</strong> Particionar disco</a></li><li class="chapter-item expanded "><a href="install/particionado.html"><strong aria-hidden="true">3.3.</strong> Formatear y encriptar particiones</a></li><li class="chapter-item expanded "><a href="install/system.html"><strong aria-hidden="true">3.4.</strong> Instalar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">4.</strong> Configurar el sistema</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/timezone.html"><strong aria-hidden="true">4.1.</strong> Zona horaria</a></li><li class="chapter-item expanded "><a href="config/language.html"><strong aria-hidden="true">4.2.</strong> Idioma</a></li><li class="chapter-item expanded "><a href="config/network.html"><strong aria-hidden="true">4.3.</strong> Red</a></li><li class="chapter-item expanded "><a href="config/ramdisk.html"><strong aria-hidden="true">4.4.</strong> Disco RAM inicial</a></li><li class="chapter-item expanded "><a href="config/users.html"><strong aria-hidden="true">4.5.</strong> Usuarios y contraseñas</a></li><li class="chapter-item expanded "><a href="config/bootloader.html"><strong aria-hidden="true">4.6.</strong> Gestor de arranque</a></li><li class="chapter-item expanded "><a href="config/microcode.html"><strong aria-hidden="true">4.7.</strong> Microcodes</a></li><li class="chapter-item expanded "><a href="config/test.html"><strong aria-hidden="true">4.8.</strong> Probar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="desktop/index.html"><strong aria-hidden="true">5.</strong> Entorno de escritorio</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="desktop/packages.html"><strong aria-hidden="true">5.1.</strong> Paquetes necesarios</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Guía de instalación de Arch Linux</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introducción" id="introducción">Introducción</a></h1>
+<p>Este documento es un manual con los pasos a seguir para instalar la distribución GNU/Linux <strong>Arch Linux</strong> de manera que el resultado sea un sistema estable, ligero y seguro. Para ello a los pasos &quot;estándar&quot; se van a añadir indicaciones para usar <strong>volúmenes lógicos</strong> (LVM) y <strong>encriptación de disco</strong>.</p>
+<h2><a class="header" href="#lvm" id="lvm">LVM</a></h2>
+<p>TODO</p>
+<h2><a class="header" href="#encriptación" id="encriptación">Encriptación</a></h2>
+<p>TODO</p>
+<h1><a class="header" href="#prerrequisitos" id="prerrequisitos">Prerrequisitos</a></h1>
+<p>Para simplificar el proceso es necesario que la máquina donde se vaya a instalar el sistema disponga de conexión a Internet por cable.</p>
+<p>Además se debe tener preparado un USB con la ISO de Arch Linux cargada para que se ejecute al arrancar.</p>
+<p>Por último, es necesario acceder a la BIOS para <strong>desactivar Secure Boot</strong> y <strong>activar UEFI</strong>.</p>
+<h1><a class="header" href="#instalación" id="instalación">Instalación</a></h1>
+<h1><a class="header" href="#" id=""></a></h1>
+<h1><a class="header" href="#preparación-y-arranque-del-usb" id="preparación-y-arranque-del-usb">Preparación y arranque del USB</a></h1>
+<p>Si el USB ha sido correctamente creado y la BIOS está bien configurada, al arrancar aparecerá un menú con opciones, entre ellas <em>Arch Linux install medium</em>. Tras seleccionar esa opción arrancará el sistema y nos mostrará un terminal sobre el que podremos configurar el disco e iniciar la instalación.</p>
+<p><img src="install/../images/boot-menu.png" alt="Menú de arranque de Arch Linux" /></p>
+<p>En este punto es conveniente cambiar la distribución del teclado a español:</p>
+<pre><code class="language-bash">loadkeys es
+</code></pre>
+<p>Antes de continuar es necesario disponer de conexión a Internet, para ello basta con hacer <code>ping</code> a cualquier URL válida y comprobar que responde:</p>
+<pre><code class="language-bash">ping -c3 archlinux.org
+</code></pre>
+<h1><a class="header" href="#particionar-disco" id="particionar-disco">Particionar disco</a></h1>
+<p>Como se ha explicado anteriormente, se va usar LVM para evitar crear particiones fijas de tamaños predefinidos. En vez de eso, simplemente es necesario crear tres: el gestor de arranque, la memoria swap y la que contendrá el resto del sistema y cuentas de usuario (esta última cifrada).</p>
+<p>El primer paso consiste en averiguar el identificador que se ha asignado al disco duro sobre el que se va a realizar la instalación mediante:</p>
+<pre><code class="language-bash">fdisk -l | grep dev
+</code></pre>
+<p>En este caso solo se dispone de un disco duro al que se le ha asignado el identificador <strong>sda</strong>:</p>
+<p><img src="install/../images/fdisk-grep-dev.png" alt="Salida mostrada por el comando fdisk" /></p>
+<pre><code class="language-bash">Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Disk /dev/loop0: 549.16 MiB, 575836160 bytes, 1124680 sectors
+</code></pre>
+<blockquote>
+<p>Es importante realizar los cambios sobre el disco correcto en el que se quiere hacer la instalación porque el proceso de particionado elimina todo el contenido previo que hubiera en él.</p>
+</blockquote>
+<p>El comando <code>fdisk</code> también permite gestionar particiones si se le pasa como parámetro un identificador de disco válido:</p>
+<pre><code class="language-bash">fdisk /dev/sda
+</code></pre>
+<p>Una vez dentro, los comandos a ejecutar para crear las particiones son:</p>
+<ol>
+<li><code>g</code> crea una nueva tabla de particiones de tipo GPT.</li>
+<li><code>n</code> inicia el asistente para crear una nueva partición.
+<ol>
+<li>Pulsar Intro para seleccionar por defecto el número de la partición.</li>
+<li>Pulsar Intro para seleccionar el valor por defecto del sector de inicio (First sector).</li>
+<li><code>+500M</code> indica el tamaño de la partición (500 MiB en este caso) para que <code>fdisk</code> calcule el último sector.</li>
+<li><code>t</code> para seleccionar el tipo de partición.</li>
+<li><code>1</code> para seleccionar el tipo <strong>EFI System</strong>.</li>
+</ol>
+</li>
+<li><code>n</code> inicia el asistente para crear una segunda partición (<code>/boot</code>).
+<ol>
+<li>Pulsar Intro para seleccionar por defecto el número de la partición.</li>
+<li>Pulsar Intro para seleccionar el valor por defecto del sector de inicio (First sector).</li>
+<li><code>+500M</code> indica el tamaño de la partición (500 MiB en este caso) para que <code>fdisk</code> calcule el último sector.</li>
+</ol>
+</li>
+<li><code>n</code> inicia el asistente para crear una tercera partición (swap).
+<ol>
+<li>Pulsar Intro para seleccionar por defecto el número de la partición.</li>
+<li>Pulsar Intro para seleccionar el valor por defecto del sector de inicio (First sector).</li>
+<li>En este caso hay que indicar un tamaño equivalente al de la memoria RAM del ordenador. Por ejemplo, para 8 GiB hay que poner <code>+8G</code>.</li>
+<li><code>t</code> para seleccionar el tipo de partición.</li>
+<li><code>3</code> para seleccionar la partición.</li>
+<li><code>19</code> para seleccionar el tipo <strong>Linux swap</strong>.</li>
+</ol>
+</li>
+<li><code>n</code> inicia el asistente para crear una tercera partición (<code>/</code>).
+<ol>
+<li>Pulsar Intro para seleccionar por defecto el número de la partición.</li>
+<li>Pulsar Intro para seleccionar el valor por defecto del sector de inicio (First sector).</li>
+<li>Pulsar Intro para seleccionar el espacio restante del disco.</li>
+<li><code>t</code> para seleccionar el tipo de partición.</li>
+<li><code>4</code> para seleccionar la partición.</li>
+<li><code>30</code> para seleccionar el tipo <strong>Linux LVM</strong>.</li>
+</ol>
+</li>
+</ol>
+<p>Tras realizar estos pasos las particiones habrán sido correctamente creadas, aunque los cambios no son efectivos hasta que no se le indica a <code>fdisk</code> que los aplique, por lo que es posible comprobar que todo es correcto antes. La opción <code>p</code> muestra un resumen de los cambios realizados hasta el momento:</p>
+<p><img src="install/../images/fdisk-resumen.png" alt="Resumen de cambios a realizar por fdisk" /></p>
+<p>Finalmente se aplican los cambios con <code>w</code> y se cierra el asistente:</p>
+<p><img src="install/../images/fdisk-wipe.png" alt="Confirmar y aplicar cambios en fdisk" /></p>
+<h1><a class="header" href="#formatear-y-encriptar-particiones" id="formatear-y-encriptar-particiones">Formatear y encriptar particiones</a></h1>
+<p>Para evitar confusiones con los números de las particiones, se puede usar una tabla para consultar el nombre del dispositivo antes de realizar cualquier operación no reversible. Por eso, a partir de ahora se usará el id en vez del identificador del dispositivo.</p>
+<table><thead><tr><th>Id</th><th>Dispositivo</th><th>Tipo</th><th>Formato</th><th>Encriptada</th><th>Puntos de montaje</th></tr></thead><tbody>
+<tr><td>EFI</td><td>/dev/sda1</td><td>EFI</td><td>FAT 32</td><td>No</td><td></td></tr>
+<tr><td>Arranque</td><td>/dev/sda2</td><td>Linux</td><td>Ext 4</td><td>No</td><td>/boot</td></tr>
+<tr><td>Swap</td><td>/dev/sda3</td><td>Swap</td><td></td><td>No</td><td></td></tr>
+<tr><td>Sistema</td><td>/dev/sda4</td><td>LVM</td><td>Ext 4</td><td>Sí</td><td>/home, /</td></tr>
+</tbody></table>
+<p>Formatear la partición <em>EFI</em> como FAT 32:</p>
+<pre><code class="language-bash">mkfs.fat -F32 /dev/sda1
+</code></pre>
+<p>Formatear la partición <em>Arranque</em> como Ext 4:</p>
+<pre><code class="language-bash">mkfs.ext4 /dev/sda2
+</code></pre>
+<p>Inicializar y activar la partición <em>Swap</em>:</p>
+<pre><code class="language-bash">mkswap /dev/sda3
+swapon /dev/sda3
+</code></pre>
+<p>Antes de crear las particiones lógicas en <em>Sistema</em> hay que activar la encriptación:</p>
+<pre><code class="language-bash">cryptsetup luksFormat /dev/sda4
+</code></pre>
+<p>En este punto el sistema solicitará la contraseña a usar para desencriptar el disco y será la que habrá que introducir cada vez que se arranque el ordenador:</p>
+<p><img src="install/../images/cryptsetup-encrypt.png" alt="Encriptación de la partición del sistema" /></p>
+<p>Para crear los volúmenes lógicos es necesario por lo tanto desencriptar la partición:</p>
+<pre><code class="language-bash">cryptsetup open --type luks /dev/sda4 Sistema
+</code></pre>
+<p>Este crea un fichero que hace referencia a la partición desencriptada:</p>
+<p><img src="install/../images/ls-mapper.png" alt="Listado del directorio /dev/mapper" /></p>
+<blockquote>
+<p><em>Sistema</em> es el nombre con el que se va a hacer referencia a la partición mientras haya sido desencriptada con el comando anterior. No es un nombre permanente.</p>
+</blockquote>
+<p>Primero hay que crear un volúmen físico y un <em>volume group</em> que lo contenga:</p>
+<pre><code class="language-bash">pvcreate /dev/mapper/Sistema
+vgcreate vg0 /dev/mapper/Sistema
+</code></pre>
+<p><img src="install/../images/pvcreate.png" alt="Creación volúmen físico y volume group" /></p>
+<p>Por último, hay que crear los volúmenes lógicos a partir del <em>volume group</em>:</p>
+<pre><code class="language-bash">lvcreate -L 2G vg0 -n home
+lvcreate -l 100%FREE vg0 -n system
+</code></pre>
+<p>Los volúmenes creados como <em>home</em> y <em>system</em> tendrán montadas las rutas <code>/home</code> y <code>/</code>. Solo queda formatearlos como Ext 4:</p>
+<pre><code class="language-bash">mkfs.ext4 /dev/vg0/home
+mkfs.ext4 /dev/vg0/system
+</code></pre>
+<h1><a class="header" href="#instalar-el-sistema" id="instalar-el-sistema">Instalar el sistema</a></h1>
+<p>En este punto es necesario <em>montar</em> las particiones en carpetas para que el script de instalación pueda acceder a ellas. Es necesario montar tres particiones:</p>
+<pre><code class="language-bash">mount /dev/vg0/system /mnt
+mkdir /mnt/home
+mount /dev/vg0/home /mnt/home
+mkdir /mnt/boot
+mount /dev/sda2 /mnt/boot
+</code></pre>
+<p>La instalación de Arch Linux, firmwares necesarios y el kernel de Linux se realiza mediante <code>pacstrap</code>. En este punto es necesario decidir qué kernel se instalará:</p>
+<ul>
+<li><code>linux</code>: última versión estable.</li>
+<li><code>linux-hardened</code>: orientado a seguridad, incluye parches adicionales para evitar exploits.</li>
+<li><code>linux-lts</code>: última versión LTS.</li>
+<li><code>linux-zen</code>: última versión estable con parámetros de configuración reajustados para lograr un mayor rendimiento del kernel a cambio de un mayor consumo de potencia.</li>
+</ul>
+<pre><code class="language-bash">pacstrap /mnt base linux-zen linux-firmware sudo nano
+</code></pre>
+<blockquote>
+<p>El proceso de instalación es idéntico sin importar qué tipo de kernel se instale, con la salvedad del paquete <a href="https://wiki.archlinux.org/index.php/VirtualBox#Installation_steps_for_Arch_Linux_hosts"><code>virtualbox</code></a>.</p>
+</blockquote>
+<p>Una vez el proceso haya finalizado, es necesario persistir en el fichero <code>/etc/fstab</code> la información de las particiones que han de montarse automáticamente cuando arranque el sistema. El comando empleado usará las que haya montadas en ese momento:</p>
+<pre><code class="language-bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre>
+<p>El comando <code>more</code> permite mostrar el contenido del fichero recién creado. En este caso debería mostrar cuatro particiones: <em>Arranque</em>, <em>Swap</em> y las dos del <em>Sistema</em> (<code>/home</code> y <code>/</code>).</p>
+<p><img src="install/../images/fstab.png" alt="Archivo fstab creado por genfstab" /></p>
+<p>Para completar la configuración del sistema base, es necesario ejecutar el comando <code>arch-chroot /mnt</code> para poder acceder libremente a los archivos de instalación y modificarlos. El <em>prompt</em> del terminal cambiará a partir de ahora:</p>
+<p><img src="install/../images/arch-chroot.png" alt="arch-chroot" /></p>
+<blockquote>
+<p>El comando arch-chroot crea un <strong>chroot-jail</strong>, es decir, a partir de este momento no va a ser posible acceder a archivos fuera de la ruta absoluta <code>/mnt</code>, que es donde se han montado las particiones. Además, los comandos ejecutados creerán estar en la ruta <code>/</code>. Se trata de una práctica habitual cuando se realizan tareas de críticas en un sistema, como actualizarlo, recuperar contraseñas o repararlo.</p>
+</blockquote>
+<p>TODO</p>
+<h1><a class="header" href="#zona-horaria" id="zona-horaria">Zona horaria</a></h1>
+<pre><code class="language-bash">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+</code></pre>
+<h1><a class="header" href="#idioma" id="idioma">Idioma</a></h1>
+<p>Usando el editor nano, modificar el archivo <code>/etc/locale.gen</code> y descomentar las líneas <code>en_US.UTF-8 UTF-8</code> y <code>es_ES.UTF-8 UTF-8</code> para poder usar el sistema tanto en castellano como en inglés. Aplicar los cambios con el comando <code>locale-gen</code>.</p>
+<p><img src="config/../images/locale-gen.png" alt="Generar locales en castellano e inglés" /></p>
+<p>Configurar la variable <code>LANG</code> en el fichero <code>/etc/locale.conf</code> en el idioma que se prefiera de los que se han configurado (<code>en_US.UTF-8</code> en este caso):</p>
+<pre><code class="language-bash">echo &quot;LANG=en_US.UTF-8&quot; &gt; /etc/locale.conf
+</code></pre>
+<p>Por último, configurar la distribución definiendo la variable <code>KEYMAP</code> en el fichero <code>/etc/vconsole.conf</code>:</p>
+<pre><code class="language-bash">echo &quot;KEYMAP=es&quot; &gt; /etc/vconsole.conf
+</code></pre>
+<h1><a class="header" href="#red" id="red">Red</a></h1>
+<p>Aunque en este punto el sistema sea capaz de conectarse a Internet y descargar paquetes, es necesario instalar el software necesario para que una vez eliminado el USB de instalación, se siga teniendo conectividad.</p>
+<pre><code class="language-bash">pacman -S networkmanager wpa_supplicant wireless_tools netctl --noconfirm
+</code></pre>
+<p>El paquete <code>networkmanager</code> instala un servicio llamado <code>NetworkManager</code> para <code>systemd</code> que debe ser activado para que pueda gestionar la configuración de las interfaces de red, como asignar IPs o conectar a redes inalámbricas.</p>
+<pre><code class="language-bash">systemctl enable NetworkManager
+</code></pre>
+<p>Por último, hay que indicar el <em>hostname</em> editando el fichero <code>/etc/hostname</code>. En este caso, lo vamos a llamar ARCH:</p>
+<pre><code class="language-bash">echo ARCH &gt; /etc/hostname
+</code></pre>
+<p>El archivo <code>/etc/hosts</code> también ha de ser modificado.</p>
+<p><img src="config/../images/hosts.png" alt="Archivo hosts" /></p>
+<h1><a class="header" href="#disco-ram-inicial" id="disco-ram-inicial">Disco RAM inicial</a></h1>
+<p>Es necesario reconstruir el script de arranque inicial para que sea capaz de leer las particiones LVM y de desencriptarlas, en caso de suministrarle la contraseña correcta.</p>
+<p>Para ello basta con modificar el fichero de configuración <code>/etc/mkinitcpio.conf</code> que es leído cada vez que se regenera ese script. En concreto, a la línea</p>
+<pre><code class="language-bash">HOOKS = (base udev autodetect modconf block filesystems keyboard fsck)
+</code></pre>
+<p>hay que añadirle las opciones <code>encrypt</code> y <code>lvm2</code> después de <code>block</code>:</p>
+<pre><code class="language-bash">HOOKS = (base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
+</code></pre>
+<p>Sin embargo, para que el <em>hook</em> de LVM pueda funcionar y el sistema sea capaz de leer las particiones al inicio, hay que instalar el paquete <code>lvm2</code> puesto que no viene incluido en el sistema base:</p>
+<pre><code class="language-bash">pacman -Sy lvm2 --noconfirm
+</code></pre>
+<p>Este comando incluye una imagen del kernel que se quiere que cargue al inicio y ha de coincidir con el que se ha instalado usando <code>pacstrap</code>, en este caso:</p>
+<pre><code class="language-bash">mkinitcpio -p linux-zen
+</code></pre>
+<h1><a class="header" href="#usuarios-y-contraseñas" id="usuarios-y-contraseñas">Usuarios y contraseñas</a></h1>
+<h2><a class="header" href="#inicializar-contraseña-de-root" id="inicializar-contraseña-de-root">Inicializar contraseña de root</a></h2>
+<p>Antes de iniciar el sistema por primera vez tras instalar los paquetes, es recomendable configurar la contraseña del usuario <code>root</code> con el comando <code>passwd</code>.</p>
+<p><img src="config/../images/root-password.png" alt="Crear contraseña para el usuario root" /></p>
+<h2><a class="header" href="#crear-usuario" id="crear-usuario">Crear usuario</a></h2>
+<p>Crear un usuario sin permisos de administrador para el uso habitual del sistema también es lo recomendable. Este usuario pertenecerá a los grupos <code>users</code> y <code>wheel</code>, este último permitirá ejecutar comandos de <code>root</code> usando <code>sudo</code>.</p>
+<p><img src="config/../images/create-user.png" alt="Crear usuario" /></p>
+<blockquote>
+<p>En este caso, el usuario creado se llama <em>diego</em> y se le ha creado una carpeta en <code>/home/diego</code> a la que solo pueden acceder él y <code>root</code>.</p>
+</blockquote>
+<p>Al igual que con <code>root</code>, hay que definir la contraseña para el usuario recién creado:</p>
+<p><img src="config/../images/user-password.png" alt="Crear contraseña de usuario" /></p>
+<h2><a class="header" href="#permitir-ejecutar-comandos-de-root-con-sudo" id="permitir-ejecutar-comandos-de-root-con-sudo">Permitir ejecutar comandos de root con sudo</a></h2>
+<p>El comando <code>visudo</code> abre un editor de texto, configurable mediante la variable de entorno <code>$EDITOR</code>, para modificar el fichero <code>/etc/sudoers</code> de una forma segura (por ejemplo, no permite guardar cambios que vayan a provocar que el parseo del archivo falle). Ese archivo define, entre otras cosas, qué comandos pueden o no ejecutar los usuarios que no son <code>root</code> y si ha de solicitarles alguna contraseña previamente.</p>
+<p>En este caso, se va a modificar para que los usuarios que pertenezcan al grupo <code>wheel</code> puedan lanzar cualquier comando como si fueran <code>root</code> (usando <code>sudo</code>).</p>
+<pre><code class="language-bash">EDITOR=nano visudo
+</code></pre>
+<p>Para que no se pida contraseña a los usuarios, hay que descomentar (eliminar el carácter <code>#</code>) la línea</p>
+<pre><code class="language-bash"># %wheel ALL=(ALL) ALL
+</code></pre>
+<p>Para que se les pida contraseña, la línea a descomentar es</p>
+<pre><code class="language-bash"># %wheel ALL=(ALL) NOPASSWD: ALL
+</code></pre>
+<p>Para guardar los cambios en el editor, hay que pulsar <code>Ctrl + O</code> y para salir, <code>Ctrl + X</code>. En caso de haber cometido algún error que haya dejado el fichero en un estado inestable, se muestra un aviso dando la opción de volver a abrir el editor o de descartar los cambios.</p>
+<p><img src="config/../images/visudo-error.png" alt="Error validando archivo /etc/sudoers" /></p>
+<h1><a class="header" href="#gestor-de-arranque" id="gestor-de-arranque">Gestor de arranque</a></h1>
+<p>De todos los gestores de arranque que hay, GRUB sigue siendo el que más compatibilidad ofrece y con el que más usuarios están familiarizados por su veteranía, por lo que se van a explicar los pasos para configurar el arranque del sistema EFI para él.</p>
+<p>El primer paso es instalar los paquetes necesarios:</p>
+<pre><code class="language-bash">pacman -S grub efibootmgr dosfstools mtools --noconfirm
+</code></pre>
+<p>Con el paquete <code>grub</code> se instala su fichero de configuración correspondiente en <code>/etc/default/grub</code>. Es necesario editarlo para indicarle que la partición donde se ha instalado el sistema (en este caso, <code>/dev/sda4</code>) está encriptada y usa LVM.</p>
+<pre><code class="language-bash">nano /etc/default/grub
+</code></pre>
+<p>A la propiedad <code>GRUB_CMDLINE_LINUX_DEFAULT</code> hay que añadirle la partición encriptada, teniendo en cuenta que también está dentro de un volumen lógico. En este caso es <code>/dev/sda4:vg0</code>, por lo que la línea completa (incluyendo lo que hay por defecto) es:</p>
+<pre><code class="language-bash">GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=3 cryptdevice=/dev/sda4:vg0:allow-discards quiet&quot;
+</code></pre>
+<p>Además, hay que indicarle que la encriptación es con formato LUKS descomentando la línea</p>
+<pre><code class="language-bash">GRUB_ENABLE_CRYPTDISK=y
+</code></pre>
+<p>En este punto es necesario montar la partición <code>/dev/sda1</code>, que en la tabla de la sección de <a href="config/../install/particionado.html">particionado</a> está indicado que va a contener los archivos necesarios para arrancar el sistema en modo EFI. Al tratarse de una partición con información requerida para arrancar el sistema, hay que montarla en una carpeta dentro de <code>/boot</code>, que a su vez es la carpeta donde se ha montado la partición <code>/dev/sda2</code>.</p>
+<pre><code class="language-bash">mkdir /boot/EFI
+mount /dev/sda1 /boot/EFI
+</code></pre>
+<p>Finalmente, instalamos el gestor de arranque con el comando <code>grub-install</code>:</p>
+<pre><code class="language-bash">grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+</code></pre>
+<p>Antes de generar el menú que GRUB mostrará al iniciar el sistema, es necesario copiar un archivo para que lo muestre correctamente en inglés:</p>
+<pre><code class="language-bash">cp /boot/grub/locale/en\@quot.mo /boot/grub/en.mo
+</code></pre>
+<p>Por último, se genera el menú:</p>
+<pre><code class="language-bash">grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>El resultado de este comando indicará que ha &quot;encontrado&quot; tres imágenes por cada kernel que se haya instalado: <em>linux</em>, <em>initrd</em> y <em>fallback initrd</em>.</p>
+<p><img src="config/../images/grub-mkconfig.png" alt="Resultado de la configuración de GRUB" /></p>
+<h1><a class="header" href="#microcodes" id="microcodes">Microcodes</a></h1>
+<p>Los fabricantes de procesadores publican actualizaciones de estabilidad y seguridad para el microcódigo de sus CPUs, que proporcionan correcciones de errores que pueden ser críticas. Por ello, es altamente recomendable que los poseedores de microprocesadores de AMD o Intel instalen el paquete correspondiente.</p>
+<p>Para procesadores Intel:</p>
+<pre><code class="language-bash">pacman -S intel-ucode
+</code></pre>
+<p>Para procesadores AMD:</p>
+<pre><code class="language-bash">pacman -S amd-ucode
+</code></pre>
+<p>El modelo exacto de la CPU se puede obtener con el comando <code>cat /proc/cpuinfo</code>.</p>
+<h1><a class="header" href="#probar-el-sistema" id="probar-el-sistema">Probar el sistema</a></h1>
+<p>En este punto, si todo se ha hecho correctamente, el sistema debe arrancar sin problema. Primero se ha de salir del entorno de <code>chroot</code> en el que se ha estado trabajando:</p>
+<pre><code class="language-bash">exit
+</code></pre>
+<p>A continuación, se apaga el sistema:</p>
+<pre><code class="language-bash">poweroff
+</code></pre>
+<p>Con el sistema desconectado, se elimina el USB de instalación. Tras arrancar de nuevo, aparecerá el menú de GRUB.</p>
+<p><img src="config/../images/grub-menu.png" alt="Menú GRUB" /></p>
+<p>Tras seleccionar la opción por defecto es necesario introducir la clave de cifrado de la partición <em>Sistema</em>, en este caso <code>/dev/sda4</code>.</p>
+<p><img src="config/../images/arch-boot-decrypt.png" alt="Introducir clave de cifrado" /></p>
+<p>Por último, hay que iniciar sesión con el usuario creado previamente, <em>diego</em> en este caso.</p>
+<p><img src="config/../images/arch-login.png" alt="Login" /></p>
+<h1><a class="header" href="#entorno-de-escritorio" id="entorno-de-escritorio">Entorno de escritorio</a></h1>
+<p>La instalación y configuración del sistema hasta ahora da como resultado un sistema Arch Linux estable y listo para trabajar, rápido y liviano. Sin embargo, es muy frecuente necesitar un entorno gráfico para utilizar la mayoría de programas disponibles, como IDEs de desarrollo o navegadores web. En ese caso es necesario instalar paquetes adicionales, como un <strong>sistema X Window</strong>, un <strong>gestor de ventanas</strong>, un <strong>gestor de inicio de sesión</strong> o un <strong>entorno de escritorio</strong>.</p>
+<p>Existen multitud de alternativas para todos ellos y la mayoría se pueden combinar entre sí hasta lograr una configuración acorde a lo deseado y a los recursos de los que se dispone. Para ser lo más generalista posible, este capítulo va a explicar cómo instalar el entorno de escritorio KDE.</p>
+<blockquote>
+<p>Para evitar usar <code>sudo</code> con cada comando, es recomendable iniciar sesión con el usuario <code>root</code>.</p>
+</blockquote>
+<h1><a class="header" href="#paquetes-necesarios" id="paquetes-necesarios">Paquetes necesarios</a></h1>
+<pre><code class="language-bash">pacman -S mesa plasma plasma-wayland-session xorg-server-xwayland --noconfirm
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
