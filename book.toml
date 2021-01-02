@@ -4,6 +4,7 @@ language = "es"
 multilingual = false
 src = "src"
 title = "Guía de instalación de Arch Linux"
+git-repository-url = "https://github.com/dcordonu/arch-installation-guide"
 
 [build]
 create-missing = false
