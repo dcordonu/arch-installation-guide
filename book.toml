@@ -4,7 +4,11 @@ language = "es"
 multilingual = false
 src = "src"
 title = "Guía de instalación de Arch Linux"
-git-repository-url = "https://github.com/dcordonu/arch-installation-guide"
+description = "Guía en formato libro con las indicaciones para instalar Arch Linux como único sistema operativo."
 
 [build]
 create-missing = false
+
+[output.html]
+git-repository-url = "https://github.com/dcordonu/arch-installation-guide"
+
