@@ -10,4 +10,5 @@
 6. [Gestor de arranque](./config/bootloader.md)
 7. [Microcodes](./config/microcode.md)
 8. [Probar el sistema](./config/test.md)
-9. [Instalar YAY](./install/yay.md)
+9. [Instalar YAY](./config/yay.md)
+9. [Configurar SSH](./config/ssh.md)

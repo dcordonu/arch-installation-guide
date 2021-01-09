@@ -11,4 +11,4 @@ create-missing = false
 
 [output.html]
 git-repository-url = "https://github.com/dcordonu/arch-installation-guide"
-
+additional-css = [ "theme/custom.css" ]
