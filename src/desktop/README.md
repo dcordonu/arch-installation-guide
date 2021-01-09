@@ -5,3 +5,9 @@ La instalación y configuración del sistema hasta ahora da como resultado un si
 Existen multitud de alternativas para todos ellos y la mayoría se pueden combinar entre sí hasta lograr una configuración acorde a lo deseado y a los recursos de los que se dispone. Para ser lo más generalista posible, este capítulo va a explicar cómo instalar el entorno de escritorio KDE.
 
 >Para evitar usar `sudo` con cada comando, es recomendable iniciar sesión con el usuario `root`.
+
+## Índice
+
+1. [Entorno de escritorio](./desktop/kde.md)
+2. [Gestor de inicio](./desktop/sddm.md)
+3. [Paquetes](./desktop/packages.md)

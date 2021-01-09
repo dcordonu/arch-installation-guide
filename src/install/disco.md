@@ -40,7 +40,7 @@ Una vez dentro, los comandos a ejecutar para crear las particiones son:
     4. `t` para seleccionar el tipo de partición.
     5. `3` para seleccionar la partición.
     6. `19` para seleccionar el tipo **Linux swap**.
-5. `n` inicia el asistente para crear una tercera partición (`/`).
+5. `n` inicia el asistente para crear una cuarta partición (`/`).
     1. Pulsar Intro para seleccionar por defecto el número de la partición.
     2. Pulsar Intro para seleccionar el valor por defecto del sector de inicio (First sector).
     3. Pulsar Intro para seleccionar el espacio restante del disco.

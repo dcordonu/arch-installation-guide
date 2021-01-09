@@ -17,7 +17,7 @@ Una desventaja de este tipo de paquetes es que cuando se actualiza el sistema, n
 Instalar paquetes desde el AUR requiere descargar ciertos paquetes previamente:
 
 ```bash
-sudo pacman -S fakeroot --noconfirm
+sudo pacman -S base-devel --noconfirm
 ```
 
 >En este caso es necesario lanzar el comando mediante `sudo` al no estar trabajando como usuario `root`.
