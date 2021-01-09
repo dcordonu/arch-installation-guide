@@ -41,6 +41,8 @@
 
         <!-- Custom theme stylesheets -->
         
+        <link rel="stylesheet" href="theme/custom.css">
+        
 
         
     </head>
@@ -93,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="prerequisites/index.html"><strong aria-hidden="true">2.</strong> Prerrequisitos</a></li><li class="chapter-item expanded "><a href="install/index.html"><strong aria-hidden="true">3.</strong> Instalación</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="install/usb.html"><strong aria-hidden="true">3.1.</strong> Preparación y arranque del USB</a></li><li class="chapter-item expanded "><a href="install/disco.html"><strong aria-hidden="true">3.2.</strong> Particionar disco</a></li><li class="chapter-item expanded "><a href="install/particionado.html"><strong aria-hidden="true">3.3.</strong> Formatear y encriptar particiones</a></li><li class="chapter-item expanded "><a href="install/system.html"><strong aria-hidden="true">3.4.</strong> Instalar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">4.</strong> Configurar el sistema</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/timezone.html"><strong aria-hidden="true">4.1.</strong> Zona horaria</a></li><li class="chapter-item expanded "><a href="config/language.html"><strong aria-hidden="true">4.2.</strong> Idioma</a></li><li class="chapter-item expanded "><a href="config/network.html"><strong aria-hidden="true">4.3.</strong> Red</a></li><li class="chapter-item expanded "><a href="config/ramdisk.html"><strong aria-hidden="true">4.4.</strong> Disco RAM inicial</a></li><li class="chapter-item expanded "><a href="config/users.html"><strong aria-hidden="true">4.5.</strong> Usuarios y contraseñas</a></li><li class="chapter-item expanded "><a href="config/bootloader.html"><strong aria-hidden="true">4.6.</strong> Gestor de arranque</a></li><li class="chapter-item expanded "><a href="config/microcode.html"><strong aria-hidden="true">4.7.</strong> Microcodes</a></li><li class="chapter-item expanded "><a href="config/test.html"><strong aria-hidden="true">4.8.</strong> Probar el sistema</a></li><li class="chapter-item expanded "><a href="install/yay.html"><strong aria-hidden="true">4.9.</strong> Instalar YAY</a></li></ol></li><li class="chapter-item expanded "><a href="desktop/index.html"><strong aria-hidden="true">5.</strong> Entorno gráfico</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="desktop/kde.html"><strong aria-hidden="true">5.1.</strong> Entorno de escritorio</a></li><li class="chapter-item expanded "><a href="desktop/sddm.html"><strong aria-hidden="true">5.2.</strong> Gestor de inicio</a></li><li class="chapter-item expanded "><a href="desktop/packages.html"><strong aria-hidden="true">5.3.</strong> Paquetes</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="prerequisites/index.html"><strong aria-hidden="true">2.</strong> Prerrequisitos</a></li><li class="chapter-item expanded "><a href="install/index.html"><strong aria-hidden="true">3.</strong> Instalación</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="install/usb.html"><strong aria-hidden="true">3.1.</strong> Preparación y arranque del USB</a></li><li class="chapter-item expanded "><a href="install/disco.html"><strong aria-hidden="true">3.2.</strong> Particionar disco</a></li><li class="chapter-item expanded "><a href="install/particionado.html"><strong aria-hidden="true">3.3.</strong> Formatear y encriptar particiones</a></li><li class="chapter-item expanded "><a href="install/system.html"><strong aria-hidden="true">3.4.</strong> Instalar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="config/index.html"><strong aria-hidden="true">4.</strong> Configurar el sistema</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="config/timezone.html"><strong aria-hidden="true">4.1.</strong> Zona horaria</a></li><li class="chapter-item expanded "><a href="config/language.html"><strong aria-hidden="true">4.2.</strong> Idioma</a></li><li class="chapter-item expanded "><a href="config/network.html"><strong aria-hidden="true">4.3.</strong> Red</a></li><li class="chapter-item expanded "><a href="config/ramdisk.html"><strong aria-hidden="true">4.4.</strong> Disco RAM inicial</a></li><li class="chapter-item expanded "><a href="config/users.html"><strong aria-hidden="true">4.5.</strong> Usuarios y contraseñas</a></li><li class="chapter-item expanded "><a href="config/bootloader.html"><strong aria-hidden="true">4.6.</strong> Gestor de arranque</a></li><li class="chapter-item expanded "><a href="config/microcode.html"><strong aria-hidden="true">4.7.</strong> Microcodes</a></li><li class="chapter-item expanded "><a href="config/test.html"><strong aria-hidden="true">4.8.</strong> Probar el sistema</a></li><li class="chapter-item expanded "><a href="config/yay.html"><strong aria-hidden="true">4.9.</strong> Instalar YAY</a></li><li class="chapter-item expanded "><a href="config/ssh.html"><strong aria-hidden="true">4.10.</strong> Configurar SSH</a></li></ol></li><li class="chapter-item expanded "><a href="desktop/index.html"><strong aria-hidden="true">5.</strong> Entorno gráfico</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="desktop/kde.html"><strong aria-hidden="true">5.1.</strong> Entorno de escritorio</a></li><li class="chapter-item expanded "><a href="desktop/sddm.html"><strong aria-hidden="true">5.2.</strong> Gestor de inicio</a></li><li class="chapter-item expanded "><a href="desktop/packages.html"><strong aria-hidden="true">5.3.</strong> Paquetes</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -335,7 +337,8 @@ mount /dev/sda2 /mnt/boot
 <li><a href="config/./config/bootloader.html">Gestor de arranque</a></li>
 <li><a href="config/./config/microcode.html">Microcodes</a></li>
 <li><a href="config/./config/test.html">Probar el sistema</a></li>
-<li><a href="config/./install/yay.html">Instalar YAY</a></li>
+<li><a href="config/./config/yay.html">Instalar YAY</a></li>
+<li><a href="config/./config/ssh.html">Configurar SSH</a></li>
 </ol>
 <h1><a class="header" href="#zona-horaria" id="zona-horaria">Zona horaria</a></h1>
 <pre><code class="language-bash">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
@@ -481,16 +484,16 @@ tar -xf yay.tar.gz --strip-components=1
 <pre><code class="language-bash">makepkg -s
 </code></pre>
 <p>Tras finalizar, se habrá creado un fichero instalable mediante <code>pacman</code> en la ruta donde se ha ejecutado el comando anterior, de extensión <code>pkg.tar.zst</code>.</p>
-<p><img src="install/../images/makepkg.png" alt="Ficheros generados por el comando makepkg" /></p>
+<p><img src="config/../images/makepkg.png" alt="Ficheros generados por el comando makepkg" /></p>
 <p>La estructura es idéntica a la de los paquetes oficiales, pero hay que tener en cuenta que al ser mantenidos por usuarios que no forman parte del equipo oficial de Arch Linux, es posible que en algún momento alguno de estos paquetes deje de ser actualizado hasta que otro usuario asuma su mantenimiento. Mientras eso ocurre, en la página del AUR correspondiente a ese paquete aparecerá como <em>out of date</em>.</p>
-<p><img src="install/../images/out-of-date.png" alt="Paquete del AUR marcado como 'out of date'" /></p>
+<p><img src="config/../images/out-of-date.png" alt="Paquete del AUR marcado como 'out of date'" /></p>
 <blockquote>
 <p>Aunque un paquete marcado como <em>out of date</em> puede aún ser instalado y funcionar, es recomendable buscar alternativas para garantizar la estabilidad del sistema.</p>
 </blockquote>
 <p>Para instalar <code>yay</code>, se emplea <code>pacman</code> con el flag U:</p>
 <pre><code class="language-bash">sudo pacman -U yay-10.1.2-1-x86_64.pkg.tar.zst --noconfirm
 </code></pre>
-<p><img src="install/../images/yay-install.png" alt="Instalación del paquete yay" /></p>
+<p><img src="config/../images/yay-install.png" alt="Instalación del paquete yay" /></p>
 <p>Finalmente, se puede borrar la carpeta temporal que se ha empleado:</p>
 <pre><code class="language-bash">cd ..
 rm -rf yay
@@ -509,7 +512,27 @@ rm -rf yay
 <p>Dado que <code>yay</code> reemplaza y amplia el alcance de <code>pacman</code>, es posible usarlo para lanzar una actualización completa del sistema, incluyendo tanto paquetes oficiales como del AUR, de manera desatentida:</p>
 <pre><code class="language-bash">yay --noremovemake --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noupgrademenu -Syu
 </code></pre>
-<p><img src="install/../images/yay-upgrade.png" alt="Actualización completa y desatendida del sistema usando yay" /></p>
+<p><img src="config/../images/yay-upgrade.png" alt="Actualización completa y desatendida del sistema usando yay" /></p>
+<h1><a class="header" href="#ssh" id="ssh">SSH</a></h1>
+<p>SSH (Secure SHell) es un protocolo cuya función principal es acceder a un servidor remoto mediante un canal seguro en el que toda la información está cifrada. Permite:</p>
+<ul>
+<li>Copiar datos de forma segura con el comando <code>rsync</code>.</li>
+<li>Simular sesiones FTP cifradas.</li>
+<li>Gestionar claves RSA para evitar introducir contraseñas al conectar a los equipos.</li>
+<li>Redirigir tráfico de ventanas X para ejecutar programas gráficos remotamente.</li>
+</ul>
+<p>El paquete <code>openssh</code> implementa el protocolo y provee el comando <code>ssh</code>. Por ejemplo, para conectar con el servidor en la IP 10.0.0.50 con las credenciales del usuario <em>diego</em>:</p>
+<pre><code class="language-bash">ssh diego@10.0.0.50
+</code></pre>
+<blockquote>
+<p>Es necesario que el servidor al que se conecta tenga instalado y en ejecución un servicio SSH.</p>
+</blockquote>
+<h2><a class="header" href="#configurar-clave-rsa" id="configurar-clave-rsa">Configurar clave RSA</a></h2>
+<p>Para conectar mediante SSH es necesario introducir la contraseña del usuario con cuya cuenta se vaya a acceder. Sin embargo, para evitarlo es posible configurar una clave RSA en la máquina <em>guest</em> e instalar la clave pública en cada uno de los servidores a los que se quiere conectar.</p>
+<p>La clave se genera con el comando <code>ssh-keygen</code>:</p>
+<pre><code class="language-bash">ssh-keygen -t rsa
+ssh-add ~/.ssh/id_rsa
+</code></pre>
 <h1><a class="header" href="#entorno-gráfico" id="entorno-gráfico">Entorno gráfico</a></h1>
 <p>La instalación y configuración del sistema hasta ahora da como resultado un sistema Arch Linux estable y listo para trabajar, rápido y liviano. Sin embargo, es muy frecuente necesitar un entorno gráfico para utilizar la mayoría de programas disponibles, como IDEs de desarrollo o navegadores web. En ese caso es necesario instalar paquetes adicionales, como un <strong>sistema X Window</strong>, un <strong>gestor de ventanas</strong>, un <strong>gestor de inicio de sesión</strong> o un <strong>entorno de escritorio</strong>.</p>
 <p>Existen multitud de alternativas para todos ellos y la mayoría se pueden combinar entre sí hasta lograr una configuración acorde a lo deseado y a los recursos de los que se dispone. Para ser lo más generalista posible, este capítulo va a explicar cómo instalar el entorno de escritorio KDE.</p>
@@ -539,18 +562,35 @@ rm -rf yay
 <p>SDDM se cargará y mostrará una ventana gráfica para introducir un usuario y una contraseña.</p>
 <p><img src="desktop/../images/sddm.png" alt="Pantalla de inicio de SDDM" /></p>
 <h1><a class="header" href="#paquetes" id="paquetes">Paquetes</a></h1>
-<h2><a class="header" href="#utilidades-kde" id="utilidades-kde">Utilidades KDE</a></h2>
+<h2><a class="header" href="#comunicación" id="comunicación">Comunicación</a></h2>
 <table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
-<tr><td><a href="https://archlinux.org/packages/extra/x86_64/kscreen">kscreen</a></td><td>Aplicación oficial de KDE para configurar monitores</td></tr>
-<tr><td><a href="https://archlinux.org/packages/extra/x86_64/okular">okular</a></td><td>Visor de PDFs</td></tr>
+<tr><td><a href="https://archlinux.org/packages/community/x86_64/discord">discord</a></td><td>Discord</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/slack-desktop">slack-desktop</a></td><td>Slack Desktop</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/skypeforlinux-stable-bin">skypeforlinux-stable-bin</a></td><td>Cliente oficial de Skype</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/teams">teams</a></td><td>Microsoft Teams</td></tr>
+<tr><td><a href="https://archlinux.org/packages/community/x86_64/telegram-desktop">telegram-desktop</a></td><td>Cliente oficial de Telegram</td></tr>
+</tbody></table>
+<h2><a class="header" href="#correo-electrónico" id="correo-electrónico">Correo electrónico</a></h2>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/thunderbird">thunderbird</a></td><td>Thunderbird</td></tr>
 </tbody></table>
 <h2><a class="header" href="#navegadores-web" id="navegadores-web">Navegadores web</a></h2>
 <table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
 <tr><td><a href="https://aur.archlinux.org/packages/brave">brave</a></td><td>Brave</td></tr>
 <tr><td><a href="https://archlinux.org/packages/extra/x86_64/chromium">chromium</a></td><td>Chromium</td></tr>
 <tr><td><a href="https://archlinux.org/packages/extra/x86_64/firefox">firefox</a></td><td>Firefox</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/google-chrome">google-chrome</a></td><td>Google Chrome</td></tr>
 <tr><td><a href="https://archlinux.org/packages/community/x86_64/opera">opera</a></td><td>Opera</td></tr>
 <tr><td><a href="https://archlinux.org/packages/community/x86_64/vivaldi">vivaldi</a></td><td>Vivaldi</td></tr>
+</tbody></table>
+<h2><a class="header" href="#utilidades-kde" id="utilidades-kde">Utilidades KDE</a></h2>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/kscreen">kscreen</a></td><td>Aplicación oficial de KDE para configurar monitores</td></tr>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/okular">okular</a></td><td>Visor de PDFs</td></tr>
+</tbody></table>
+<h2><a class="header" href="#utilidades-gnulinux" id="utilidades-gnulinux">Utilidades GNU/Linux</a></h2>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://archlinux.org/packages/core/x86_64/openssh">openssh</a></td><td>Protocolo SSH</td></tr>
 </tbody></table>
 
                     </main>

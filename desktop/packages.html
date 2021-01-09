@@ -39,6 +39,8 @@
 
         <!-- Custom theme stylesheets -->
         
+        <link rel="stylesheet" href="../theme/custom.css">
+        
 
         
     </head>
@@ -91,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="../prerequisites/index.html"><strong aria-hidden="true">2.</strong> Prerrequisitos</a></li><li class="chapter-item expanded "><a href="../install/index.html"><strong aria-hidden="true">3.</strong> Instalación</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../install/usb.html"><strong aria-hidden="true">3.1.</strong> Preparación y arranque del USB</a></li><li class="chapter-item expanded "><a href="../install/disco.html"><strong aria-hidden="true">3.2.</strong> Particionar disco</a></li><li class="chapter-item expanded "><a href="../install/particionado.html"><strong aria-hidden="true">3.3.</strong> Formatear y encriptar particiones</a></li><li class="chapter-item expanded "><a href="../install/system.html"><strong aria-hidden="true">3.4.</strong> Instalar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="../config/index.html"><strong aria-hidden="true">4.</strong> Configurar el sistema</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../config/timezone.html"><strong aria-hidden="true">4.1.</strong> Zona horaria</a></li><li class="chapter-item expanded "><a href="../config/language.html"><strong aria-hidden="true">4.2.</strong> Idioma</a></li><li class="chapter-item expanded "><a href="../config/network.html"><strong aria-hidden="true">4.3.</strong> Red</a></li><li class="chapter-item expanded "><a href="../config/ramdisk.html"><strong aria-hidden="true">4.4.</strong> Disco RAM inicial</a></li><li class="chapter-item expanded "><a href="../config/users.html"><strong aria-hidden="true">4.5.</strong> Usuarios y contraseñas</a></li><li class="chapter-item expanded "><a href="../config/bootloader.html"><strong aria-hidden="true">4.6.</strong> Gestor de arranque</a></li><li class="chapter-item expanded "><a href="../config/microcode.html"><strong aria-hidden="true">4.7.</strong> Microcodes</a></li><li class="chapter-item expanded "><a href="../config/test.html"><strong aria-hidden="true">4.8.</strong> Probar el sistema</a></li><li class="chapter-item expanded "><a href="../install/yay.html"><strong aria-hidden="true">4.9.</strong> Instalar YAY</a></li></ol></li><li class="chapter-item expanded "><a href="../desktop/index.html"><strong aria-hidden="true">5.</strong> Entorno gráfico</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../desktop/kde.html"><strong aria-hidden="true">5.1.</strong> Entorno de escritorio</a></li><li class="chapter-item expanded "><a href="../desktop/sddm.html"><strong aria-hidden="true">5.2.</strong> Gestor de inicio</a></li><li class="chapter-item expanded "><a href="../desktop/packages.html" class="active"><strong aria-hidden="true">5.3.</strong> Paquetes</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Introducción</a></li><li class="chapter-item expanded "><a href="../prerequisites/index.html"><strong aria-hidden="true">2.</strong> Prerrequisitos</a></li><li class="chapter-item expanded "><a href="../install/index.html"><strong aria-hidden="true">3.</strong> Instalación</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../install/usb.html"><strong aria-hidden="true">3.1.</strong> Preparación y arranque del USB</a></li><li class="chapter-item expanded "><a href="../install/disco.html"><strong aria-hidden="true">3.2.</strong> Particionar disco</a></li><li class="chapter-item expanded "><a href="../install/particionado.html"><strong aria-hidden="true">3.3.</strong> Formatear y encriptar particiones</a></li><li class="chapter-item expanded "><a href="../install/system.html"><strong aria-hidden="true">3.4.</strong> Instalar el sistema</a></li></ol></li><li class="chapter-item expanded "><a href="../config/index.html"><strong aria-hidden="true">4.</strong> Configurar el sistema</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../config/timezone.html"><strong aria-hidden="true">4.1.</strong> Zona horaria</a></li><li class="chapter-item expanded "><a href="../config/language.html"><strong aria-hidden="true">4.2.</strong> Idioma</a></li><li class="chapter-item expanded "><a href="../config/network.html"><strong aria-hidden="true">4.3.</strong> Red</a></li><li class="chapter-item expanded "><a href="../config/ramdisk.html"><strong aria-hidden="true">4.4.</strong> Disco RAM inicial</a></li><li class="chapter-item expanded "><a href="../config/users.html"><strong aria-hidden="true">4.5.</strong> Usuarios y contraseñas</a></li><li class="chapter-item expanded "><a href="../config/bootloader.html"><strong aria-hidden="true">4.6.</strong> Gestor de arranque</a></li><li class="chapter-item expanded "><a href="../config/microcode.html"><strong aria-hidden="true">4.7.</strong> Microcodes</a></li><li class="chapter-item expanded "><a href="../config/test.html"><strong aria-hidden="true">4.8.</strong> Probar el sistema</a></li><li class="chapter-item expanded "><a href="../config/yay.html"><strong aria-hidden="true">4.9.</strong> Instalar YAY</a></li><li class="chapter-item expanded "><a href="../config/ssh.html"><strong aria-hidden="true">4.10.</strong> Configurar SSH</a></li></ol></li><li class="chapter-item expanded "><a href="../desktop/index.html"><strong aria-hidden="true">5.</strong> Entorno gráfico</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../desktop/kde.html"><strong aria-hidden="true">5.1.</strong> Entorno de escritorio</a></li><li class="chapter-item expanded "><a href="../desktop/sddm.html"><strong aria-hidden="true">5.2.</strong> Gestor de inicio</a></li><li class="chapter-item expanded "><a href="../desktop/packages.html" class="active"><strong aria-hidden="true">5.3.</strong> Paquetes</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -162,18 +164,35 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#paquetes" id="paquetes">Paquetes</a></h1>
-<h2><a class="header" href="#utilidades-kde" id="utilidades-kde">Utilidades KDE</a></h2>
+<h2><a class="header" href="#comunicación" id="comunicación">Comunicación</a></h2>
 <table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
-<tr><td><a href="https://archlinux.org/packages/extra/x86_64/kscreen">kscreen</a></td><td>Aplicación oficial de KDE para configurar monitores</td></tr>
-<tr><td><a href="https://archlinux.org/packages/extra/x86_64/okular">okular</a></td><td>Visor de PDFs</td></tr>
+<tr><td><a href="https://archlinux.org/packages/community/x86_64/discord">discord</a></td><td>Discord</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/slack-desktop">slack-desktop</a></td><td>Slack Desktop</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/skypeforlinux-stable-bin">skypeforlinux-stable-bin</a></td><td>Cliente oficial de Skype</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/teams">teams</a></td><td>Microsoft Teams</td></tr>
+<tr><td><a href="https://archlinux.org/packages/community/x86_64/telegram-desktop">telegram-desktop</a></td><td>Cliente oficial de Telegram</td></tr>
+</tbody></table>
+<h2><a class="header" href="#correo-electrónico" id="correo-electrónico">Correo electrónico</a></h2>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/thunderbird">thunderbird</a></td><td>Thunderbird</td></tr>
 </tbody></table>
 <h2><a class="header" href="#navegadores-web" id="navegadores-web">Navegadores web</a></h2>
 <table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
 <tr><td><a href="https://aur.archlinux.org/packages/brave">brave</a></td><td>Brave</td></tr>
 <tr><td><a href="https://archlinux.org/packages/extra/x86_64/chromium">chromium</a></td><td>Chromium</td></tr>
 <tr><td><a href="https://archlinux.org/packages/extra/x86_64/firefox">firefox</a></td><td>Firefox</td></tr>
+<tr><td><a href="https://aur.archlinux.org/packages/google-chrome">google-chrome</a></td><td>Google Chrome</td></tr>
 <tr><td><a href="https://archlinux.org/packages/community/x86_64/opera">opera</a></td><td>Opera</td></tr>
 <tr><td><a href="https://archlinux.org/packages/community/x86_64/vivaldi">vivaldi</a></td><td>Vivaldi</td></tr>
+</tbody></table>
+<h2><a class="header" href="#utilidades-kde" id="utilidades-kde">Utilidades KDE</a></h2>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/kscreen">kscreen</a></td><td>Aplicación oficial de KDE para configurar monitores</td></tr>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/okular">okular</a></td><td>Visor de PDFs</td></tr>
+</tbody></table>
+<h2><a class="header" href="#utilidades-gnulinux" id="utilidades-gnulinux">Utilidades GNU/Linux</a></h2>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://archlinux.org/packages/core/x86_64/openssh">openssh</a></td><td>Protocolo SSH</td></tr>
 </tbody></table>
 
                     </main>
