@@ -174,7 +174,13 @@
 <p>Además se debe tener preparado un USB con la ISO de Arch Linux cargada para que se ejecute al arrancar.</p>
 <p>Por último, es necesario acceder a la BIOS para <strong>desactivar Secure Boot</strong> y <strong>activar UEFI</strong>.</p>
 <h1><a class="header" href="#instalación" id="instalación">Instalación</a></h1>
-<h1><a class="header" href="#" id=""></a></h1>
+<h2><a class="header" href="#Índice" id="Índice">Índice</a></h2>
+<ol>
+<li><a href="install/./install/usb.html">Preparación y arranque del USB</a></li>
+<li><a href="install/./install/disco.html">Particionar disco</a></li>
+<li><a href="install/./install/particionado.html">Formatear y encriptar particiones</a></li>
+<li><a href="install/./install/system.html">Instalar el sistema</a></li>
+</ol>
 <h1><a class="header" href="#preparación-y-arranque-del-usb" id="preparación-y-arranque-del-usb">Preparación y arranque del USB</a></h1>
 <p>Si el USB ha sido correctamente creado y la BIOS está bien configurada, al arrancar aparecerá un menú con opciones, entre ellas <em>Arch Linux install medium</em>. Tras seleccionar esa opción arrancará el sistema y nos mostrará un terminal sobre el que podremos configurar el disco e iniciar la instalación.</p>
 <p><img src="install/../images/boot-menu.png" alt="Menú de arranque de Arch Linux" /></p>
@@ -226,7 +232,7 @@
 <li><code>19</code> para seleccionar el tipo <strong>Linux swap</strong>.</li>
 </ol>
 </li>
-<li><code>n</code> inicia el asistente para crear una tercera partición (<code>/</code>).
+<li><code>n</code> inicia el asistente para crear una cuarta partición (<code>/</code>).
 <ol>
 <li>Pulsar Intro para seleccionar por defecto el número de la partición.</li>
 <li>Pulsar Intro para seleccionar el valor por defecto del sector de inicio (First sector).</li>
@@ -318,7 +324,19 @@ mount /dev/sda2 /mnt/boot
 <blockquote>
 <p>El comando arch-chroot crea un <strong>chroot-jail</strong>, es decir, a partir de este momento no va a ser posible acceder a archivos fuera de la ruta absoluta <code>/mnt</code>, que es donde se han montado las particiones. Además, los comandos ejecutados creerán estar en la ruta <code>/</code>. Se trata de una práctica habitual cuando se realizan tareas de críticas en un sistema, como actualizarlo, recuperar contraseñas o repararlo.</p>
 </blockquote>
-<p>TODO</p>
+<h1><a class="header" href="#configurar-el-sistema" id="configurar-el-sistema">Configurar el sistema</a></h1>
+<h2><a class="header" href="#Índice-1" id="Índice-1">Índice</a></h2>
+<ol>
+<li><a href="config/./config/timezone.html">Zona horaria</a></li>
+<li><a href="config/./config/language.html">Idioma</a></li>
+<li><a href="config/./config/network.html">Red</a></li>
+<li><a href="config/./config/ramdisk.html">Disco RAM inicial</a></li>
+<li><a href="config/./config/users.html">Usuarios y contraseñas</a></li>
+<li><a href="config/./config/bootloader.html">Gestor de arranque</a></li>
+<li><a href="config/./config/microcode.html">Microcodes</a></li>
+<li><a href="config/./config/test.html">Probar el sistema</a></li>
+<li><a href="config/./install/yay.html">Instalar YAY</a></li>
+</ol>
 <h1><a class="header" href="#zona-horaria" id="zona-horaria">Zona horaria</a></h1>
 <pre><code class="language-bash">ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 </code></pre>
@@ -333,7 +351,7 @@ mount /dev/sda2 /mnt/boot
 </code></pre>
 <h1><a class="header" href="#red" id="red">Red</a></h1>
 <p>Aunque en este punto el sistema sea capaz de conectarse a Internet y descargar paquetes, es necesario instalar el software necesario para que una vez eliminado el USB de instalación, se siga teniendo conectividad.</p>
-<pre><code class="language-bash">pacman -S networkmanager wpa_supplicant wireless_tools netctl --noconfirm
+<pre><code class="language-bash">pacman -S networkmanager wpa_supplicant wireless_tools netctl iwd dhcpcd --noconfirm
 </code></pre>
 <p>El paquete <code>networkmanager</code> instala un servicio llamado <code>NetworkManager</code> para <code>systemd</code> que debe ser activado para que pueda gestionar la configuración de las interfaces de red, como asignar IPs o conectar a redes inalámbricas.</p>
 <pre><code class="language-bash">systemctl enable NetworkManager
@@ -404,7 +422,7 @@ mount /dev/sda2 /mnt/boot
 mount /dev/sda1 /boot/EFI
 </code></pre>
 <p>Finalmente, instalamos el gestor de arranque con el comando <code>grub-install</code>:</p>
-<pre><code class="language-bash">grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+<pre><code class="language-bash">grub-install --target=x86_64-efi --bootloader-id=&quot;Arch Linux&quot; --recheck
 </code></pre>
 <p>Por último, se genera el menú:</p>
 <pre><code class="language-bash">grub-mkconfig -o /boot/grub/grub.cfg
@@ -448,7 +466,7 @@ mount /dev/sda1 /boot/EFI
 <p>Algunos de los comandos a emplear no permiten ser ejecutados como <code>root</code>, por lo que antes hay que iniciar sesión con otro usuario.</p>
 </blockquote>
 <p>Instalar paquetes desde el AUR requiere descargar ciertos paquetes previamente:</p>
-<pre><code class="language-bash">sudo pacman -S fakeroot --noconfirm
+<pre><code class="language-bash">sudo pacman -S base-devel --noconfirm
 </code></pre>
 <blockquote>
 <p>En este caso es necesario lanzar el comando mediante <code>sudo</code> al no estar trabajando como usuario <code>root</code>.</p>
@@ -498,9 +516,15 @@ rm -rf yay
 <blockquote>
 <p>Para evitar usar <code>sudo</code> con cada comando, es recomendable iniciar sesión con el usuario <code>root</code>.</p>
 </blockquote>
+<h2><a class="header" href="#Índice-2" id="Índice-2">Índice</a></h2>
+<ol>
+<li><a href="desktop/./desktop/kde.html">Entorno de escritorio</a></li>
+<li><a href="desktop/./desktop/sddm.html">Gestor de inicio</a></li>
+<li><a href="desktop/./desktop/packages.html">Paquetes</a></li>
+</ol>
 <h1><a class="header" href="#entorno-de-escritorio" id="entorno-de-escritorio">Entorno de escritorio</a></h1>
 <p>Una instalación mínima de KDE se consigue con el paquete <code>plasma-desktop</code>, aunque es necesario instalar más paquetes adicionales para el correcto renderizado en pantalla.</p>
-<pre><code class="language-bash">pacman -S mesa plasma-desktop plasma-wayland-session xorg-server-xwayland konsole yay --noconfirm
+<pre><code class="language-bash">pacman -S mesa plasma-desktop plasma-wayland-session xorg-server-xwayland konsole plasma-nm --noconfirm
 </code></pre>
 <h1><a class="header" href="#gestor-de-inicio" id="gestor-de-inicio">Gestor de inicio</a></h1>
 <p>El paquete <code>sddm</code> es el gestor de inicio recomendado si se trabaja con KDE.</p>
@@ -515,10 +539,18 @@ rm -rf yay
 <p>SDDM se cargará y mostrará una ventana gráfica para introducir un usuario y una contraseña.</p>
 <p><img src="desktop/../images/sddm.png" alt="Pantalla de inicio de SDDM" /></p>
 <h1><a class="header" href="#paquetes" id="paquetes">Paquetes</a></h1>
+<h2><a class="header" href="#utilidades-kde" id="utilidades-kde">Utilidades KDE</a></h2>
 <table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
 <tr><td><a href="https://archlinux.org/packages/extra/x86_64/kscreen">kscreen</a></td><td>Aplicación oficial de KDE para configurar monitores</td></tr>
-<tr><td><a href="https://archlinux.org/packages/extra/x86_64/firefox">firefox</a></td><td>Navegador Firefox</td></tr>
 <tr><td><a href="https://archlinux.org/packages/extra/x86_64/okular">okular</a></td><td>Visor de PDFs</td></tr>
+</tbody></table>
+<h2><a class="header" href="#navegadores-web" id="navegadores-web">Navegadores web</a></h2>
+<table><thead><tr><th>Paquete</th><th>Descripción</th></tr></thead><tbody>
+<tr><td><a href="https://aur.archlinux.org/packages/brave">brave</a></td><td>Brave</td></tr>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/chromium">chromium</a></td><td>Chromium</td></tr>
+<tr><td><a href="https://archlinux.org/packages/extra/x86_64/firefox">firefox</a></td><td>Firefox</td></tr>
+<tr><td><a href="https://archlinux.org/packages/community/x86_64/opera">opera</a></td><td>Opera</td></tr>
+<tr><td><a href="https://archlinux.org/packages/community/x86_64/vivaldi">vivaldi</a></td><td>Vivaldi</td></tr>
 </tbody></table>
 
                     </main>

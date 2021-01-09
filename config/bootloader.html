@@ -180,7 +180,7 @@
 mount /dev/sda1 /boot/EFI
 </code></pre>
 <p>Finalmente, instalamos el gestor de arranque con el comando <code>grub-install</code>:</p>
-<pre><code class="language-bash">grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+<pre><code class="language-bash">grub-install --target=x86_64-efi --bootloader-id=&quot;Arch Linux&quot; --recheck
 </code></pre>
 <p>Por último, se genera el menú:</p>
 <pre><code class="language-bash">grub-mkconfig -o /boot/grub/grub.cfg

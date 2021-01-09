@@ -163,7 +163,7 @@
                     <main>
                         <h1><a class="header" href="#red" id="red">Red</a></h1>
 <p>Aunque en este punto el sistema sea capaz de conectarse a Internet y descargar paquetes, es necesario instalar el software necesario para que una vez eliminado el USB de instalación, se siga teniendo conectividad.</p>
-<pre><code class="language-bash">pacman -S networkmanager wpa_supplicant wireless_tools netctl --noconfirm
+<pre><code class="language-bash">pacman -S networkmanager wpa_supplicant wireless_tools netctl iwd dhcpcd --noconfirm
 </code></pre>
 <p>El paquete <code>networkmanager</code> instala un servicio llamado <code>NetworkManager</code> para <code>systemd</code> que debe ser activado para que pueda gestionar la configuración de las interfaces de red, como asignar IPs o conectar a redes inalámbricas.</p>
 <pre><code class="language-bash">systemctl enable NetworkManager
